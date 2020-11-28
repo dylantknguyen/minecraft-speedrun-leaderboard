@@ -24,18 +24,18 @@ driver = webdriver.Firefox(options=options)
 info("Opening Firefox Headless")
 
 # Get Link
-driver.get(LINK)
+driver.get(config.LINK)
 info("Opening Link")
 
 # Find Button for 1.16
-button = driver.find_element_by_name(BUTTON1_ELEMENT)
-user_input = driver.find_element_by_id(INPUT1_ELEMENT)
+button = driver.find_element_by_name(config.BUTTON1_ELEMENT)
+user_input = driver.find_element_by_id(config.INPUT1_ELEMENT)
 ActionChains(driver).move_to_element(button).click(user_input).perform()
 info("Clicking 1.16 Button")
 
 # Find RSG Button
-button = driver.find_element_by_name(BUTTON2_ELEMENT)
-user_input = driver.find_element_by_id(INPUT2_ELEMENT)
+button = driver.find_element_by_name(config.BUTTON2_ELEMENT)
+user_input = driver.find_element_by_id(config.INPUT2_ELEMENT)
 ActionChains(driver).move_to_element(button).click(user_input).perform()
 info("Clicking RSG Button")
 
@@ -43,19 +43,19 @@ info("Clicking RSG Button")
 driver.implicitly_wait(3)
 
 # Finds All Speedrunners
-content = driver.find_elements_by_css_selector(NAME_CSS_SELECTOR)
+content = driver.find_elements_by_css_selector(config.NAME_CSS_SELECTOR)
 info("Finding All Speedrunners")
 
 
 # Print Speedrunners
 for item in content:
     info(f"Speedrunner: {item.text}")
-    if (item.text) == USERNAME:
+    if (item.text) == config.USERNAME:
         message = "Elysaku Pog"
-        mailjet = Client(auth=(MAILJET_API_KEY, MAILJET_API_SECRET), version='v3.1')
+        mailjet = Client(auth=(secret.MAILJET_API_KEY, secret.MAILJET_API_SECRET), version='v3.1')
         data = {
-        'Messages': [{"From": {"Email": SENDER_EMAIL,"Name": SENDER_NAME},
-                    "To": [{"Email": RECIEVER_EMAIL,"Name": RECIEVER_NAME}
+        'Messages': [{"From": {"Email": secret.SENDER_EMAIL,"Name": secret.SENDER_NAME},
+                    "To": [{"Email": secret.RECIEVER_EMAIL,"Name": secret.RECIEVER_NAME}
                             ],
                     "Subject": "Kara Tutoring Email Credentials",
                     "TextPart": message

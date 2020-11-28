@@ -7,8 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from mailjet_rest import Client
 
 # Constants / Secrets
-from config import *
-from secret import *
+from config import config, secret
 
 
 # Set Firefox to Headless

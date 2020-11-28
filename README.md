@@ -4,10 +4,10 @@ This script checks if a user is on the leaderboard of a certain category.
 
 # Usage
 ```
-cp config.example.py config.py
+cp config/config.example.py config/config.py
 ```
 ```
-cp secret.example.py secret.py
+cp config/secret.example.py config/secret.py
 ```
 ```
 docker-compose up -d

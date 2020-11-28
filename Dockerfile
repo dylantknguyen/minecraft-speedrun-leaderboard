@@ -24,5 +24,5 @@ COPY . /code/
 
 COPY cron /etc/cron.d/cron
 RUN chmod 0644 /etc/cron.d/cron
-RUN cron /etc/cron.d/cron-cron
+RUN cron /etc/cron.d/cron
 CMD ["cron", "-f"]

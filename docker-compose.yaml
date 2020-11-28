@@ -1,0 +1,6 @@
+version: "3"
+
+services:
+  web-scraper:
+    build: .
+    command: bash -c "python3 main.py"

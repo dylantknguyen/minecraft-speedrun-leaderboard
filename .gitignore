@@ -1,6 +1,10 @@
 # Python Files
 __pycache__
 *.pyc
+
 # Files
 config.py
 secret.py
+
+# Logs 
+*.log

@@ -13,7 +13,7 @@ from logging import basicConfig, info, INFO
 from config import config, secret
 
 # Basic Logging Config
-basicConfig(filename ='app.log', level = INFO)
+basicConfig(filename='app.log', level=INFO)
 
 # Set Firefox to Headless
 options = webdriver.FirefoxOptions()

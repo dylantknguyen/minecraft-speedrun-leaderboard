@@ -3,6 +3,6 @@ version: "3"
 services:
   web-scraper:
     build: .
-    command: cron && tail -f /var/log/cron.log
+    command: "cron -f"
     volumes:
       - .:/code
